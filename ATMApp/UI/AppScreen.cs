@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace ATMApp.UI
 {
-    public static class AppScreen
+    public class AppScreen
     {
         internal const string cur = "N ";
         internal static void Welcome()
@@ -69,6 +69,62 @@ namespace ATMApp.UI
             WriteLine("Obrigado por usar o ATM BANK");
             Utility.PrintDotAnimation();
             Clear();
+        }
+
+        internal static int SelectAmount()
+        {
+            WriteLine("");
+            WriteLine(":1.{0}500          5.{0}10.000", cur);
+            WriteLine(":2.{0}1000          6.{0}15.000", cur);
+            WriteLine(":3.{0}2000          7.{0}20.000", cur);
+            WriteLine(":4.{0}5000          8.{0}40.000", cur);
+            WriteLine(":0.{0}Outro");
+
+            int selectedAmount = Validator.Convert<int>("opção:");
+            switch(selectedAmount)
+            {
+                case 1: 
+                    return 500;
+                    break;
+                case 2:
+                    return 1000;
+                    break;
+                case 3:
+                    return 2000;
+                    break;
+                case 4:
+                    return 5000;
+                    break;
+                case 5:
+                    return 10000;
+                    break;
+                case 6:
+                    return 15000;
+                    break;
+                case 7:
+                    return 20000;
+                    break;
+                case 8:
+                    return 40000;
+                    break;
+                case 0:
+                    return 0;
+                    break;
+                default:
+                    Utility.PrintMessage("Entrada inválida. Tente novamente.", false);
+                    SelectAmount();
+                    return -1;
+                    break;
+            }
+
+        }
+        internal InternalTransfer InternalTransferForm()
+        {
+            var internalTransfer = new InternalTransfer();
+            internalTransfer.ReciepeitBankAccountNumber = Validator.Convert<long>("recipient's account number:");
+            internalTransfer.TransferAmount = Validator.Convert<decimal>($"quantia {cur}");
+            internalTransfer.RecienpeitBankAccountName = Utility.GetUserInput("recipient name: ");
+            return internalTransfer;
         }
     }
 }
