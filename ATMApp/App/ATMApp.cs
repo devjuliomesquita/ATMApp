@@ -177,7 +177,7 @@ namespace ATMApp.App
                 Utility.PrintMessage("A quantidade necessária para o depósito deve ser maior que R$ 0,00 - zero.", false);
                 return;
             }
-            if(transaction_amt % 500 != 0)
+            if(transaction_amt % 50 != 0)
             {
                 Utility.PrintMessage("As notas para o depósito devem ser multiplas de 50 e 100.", false);
                 return;
@@ -223,9 +223,9 @@ namespace ATMApp.App
                 Utility.PrintMessage("Para o saque é necessário que a quantida seja maior que zero. Tente novamente.", false);
                 return;
             }
-            if(transaction_amt % 500 != 0)
+            if(transaction_amt % 50 != 0)
             {
-                Utility.PrintMessage("Você pode sacar apenas valores multiplos de 500 e 1000. Tente novamente.", false);
+                Utility.PrintMessage("Você pode sacar apenas valores multiplos de 50 e 100. Tente novamente.", false);
                 return;
             }
 
@@ -250,13 +250,13 @@ namespace ATMApp.App
         }
         private bool PreviewBankNotesCount(int amount)
         {
-            int thousandNotesCount = amount / 1000;
-            int fiveHundredNotesCount = (amount % 1000) / 500;
+            int thousandNotesCount = amount / 100;
+            int fiveHundredNotesCount = (amount % 100) / 50;
 
             WriteLine("\nResumo");
             WriteLine("-------");
-            WriteLine($"{AppScreen.cur}1000 X {thousandNotesCount} = {thousandNotesCount*1000}");
-            WriteLine($"{AppScreen.cur}500 X {fiveHundredNotesCount} = {fiveHundredNotesCount * 500}");
+            WriteLine($"{AppScreen.cur}100 X {thousandNotesCount} = {thousandNotesCount*100}");
+            WriteLine($"{AppScreen.cur}50 X {fiveHundredNotesCount} = {fiveHundredNotesCount * 50}");
             WriteLine($"Quantia total {Utility.FormatAmount(amount)}\n\n");
 
             int opt = Validator.Convert<int>("1 para confirmar...");

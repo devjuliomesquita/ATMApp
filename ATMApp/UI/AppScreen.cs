@@ -10,7 +10,7 @@ namespace ATMApp.UI
 {
     public class AppScreen
     {
-        internal const string cur = "N ";
+        internal const string cur = "R$ ";
         internal static void Welcome()
         {
             //Apresentação, Cabeçalho e introdução do BANK
@@ -74,11 +74,11 @@ namespace ATMApp.UI
         internal static int SelectAmount()
         {
             WriteLine("");
-            WriteLine(":1.{0}500          5.{0}10.000", cur);
+            WriteLine(":1.{0}500           5.{0}10.000", cur);
             WriteLine(":2.{0}1000          6.{0}15.000", cur);
             WriteLine(":3.{0}2000          7.{0}20.000", cur);
             WriteLine(":4.{0}5000          8.{0}40.000", cur);
-            WriteLine(":0.{0}Outro");
+            WriteLine(":0.{0}Outro",cur);
 
             int selectedAmount = Validator.Convert<int>("opção:");
             switch(selectedAmount)
@@ -121,9 +121,9 @@ namespace ATMApp.UI
         internal InternalTransfer InternalTransferForm()
         {
             var internalTransfer = new InternalTransfer();
-            internalTransfer.ReciepeitBankAccountNumber = Validator.Convert<long>("recipient's account number:");
+            internalTransfer.ReciepeitBankAccountNumber = Validator.Convert<long>("número da conta do destinatário:");
             internalTransfer.TransferAmount = Validator.Convert<decimal>($"quantia {cur}");
-            internalTransfer.RecienpeitBankAccountName = Utility.GetUserInput("recipient name: ");
+            internalTransfer.RecienpeitBankAccountName = Utility.GetUserInput("nome do destinatário: ");
             return internalTransfer;
         }
     }
