@@ -9,7 +9,11 @@ ATM BANK é uma aplicação backend console construída durante o início dos me
 A aplicação consiste em uma simulação de um Banco ATM em terminal onde é possível realizar consultas, saques, transferências e verificação do extrato de sua conta. 
 
 ## Layout do Console
-![ImagemConsole 1]()
+![ImagemConsole 1](https://github.com/devjuliomesquita/ATMApp/blob/master/ATMApp/Acetss/Tela_inicial_login.png)
+![ImagemConsole 3](https://github.com/devjuliomesquita/ATMApp/blob/master/ATMApp/Acetss/Menu_deposito.png)
+![ImagemConsole 4](https://github.com/devjuliomesquita/ATMApp/blob/master/ATMApp/Acetss/Menu_sacar.png)
+![ImagemConsole 5](https://github.com/devjuliomesquita/ATMApp/blob/master/ATMApp/Acetss/Menu_transferencia.png)
+![ImagemConsole 6](https://github.com/devjuliomesquita/ATMApp/blob/master/ATMApp/Acetss/Menu_Extrato.png)
 
 # Tecnologias utilizadas
 ## Back end
