@@ -11,9 +11,6 @@ A aplicação consiste em uma simulação de um Banco ATM em terminal onde é po
 ## Layout do Console
 ![ImagemConsole 1]()
 
-## Modelo conceitual
-![Modelo Conceitual]()
-
 # Tecnologias utilizadas
 ## Back end
 C-Sharp
